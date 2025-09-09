@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papataka Book Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: #4b5563;
+        }
+        .review-cell {
+            white-space: pre-wrap;
+        }
+        .title-cell a, .book-review-link {
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .title-cell a:hover, .book-review-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4 sm:p-8 max-w-7xl">
+        
+        <div class="bg-white rounded-xl shadow-xl p-6 sm:p-10 mb-8">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <a href="https://papatakabookclub.github.io/" class="text-blue-600 hover:underline font-medium text-lg">&larr; Home</a>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mt-4 mb-2">A to Z Reading Challenge 2023</h1>
+                <p class="text-gray-600 text-lg sm:text-xl">
+                    Welcome to the challenge! Read a book for each letter of the alphabet and track your progress.
+                </p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="prose max-w-none text-gray-700">
+                <p>The A to Z reading challenge is a year-long challenge where participants can pick a letter of the alphabet and read books whose titles begin with that letter. Each participant can pick multiple letters to complete the challenge but can only read one book per letter. If a letter is already taken by someone else, no points will be awarded for reading a book starting with that letter. Participants are encouraged to read as many books as they can and keep track of their progress by filling out a <a href="https://forms.gle/914RmFsjnP57x4LW8" class="text-blue-600 hover:underline font-medium">Google Form</a> after each book. Points are awarded based on the number of pages read, and a leaderboard is created and updated weekly.</p>
+                
+                <h3 class="text-2xl font-bold mt-8 mb-4 text-gray-800">Examples</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><span class="font-bold">"Dune"</span> by Frank Herbert (604 pages) - worth 604 points for the letter "D"</li>
+                    <li><span class="font-bold">"Animal Farm"</span> by George Orwell (141 pages) - worth 141 points for the letter "A"</li>
+                    <li><span class="font-bold">"To Kill a Mockingbird"</span> by Harper Lee (281 pages) - worth 281 points for the letter "T"</li>
+                </ul>
+
+                <p class="mt-6">To participate, simply choose an available letter of the alphabet on a first come, first served basis. Once all letters have been selected and read, the challenge is complete. Participants can only read a book for one letter, and only books with English titles are considered. If a book title starts with an article such as "A" or "The," the second word's first letter is used for the selected letter.</p>
+                
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li><span class="font-bold">"The Nightingale"</span> by Kristin Hannah (440 pages) - worth 440 points for the letter "N"</li>
+                    <li><span class="font-bold">"A Little Life"</span> by Hanya Yanagihara (832 pages) - worth 832 points for letter "L"</li>
+                </ul>
+
+                <p class="mt-6">Books in all formats, including audiobooks and eBooks, are also considered for the challenge. To submit a book, participants must fill out the <a href="https://forms.gle/914RmFsjnP57x4LW8" class="text-blue-600 hover:underline font-medium">Google Form</a> with information such as the book title, author, page count, and selected letter. Participants can also choose to share a brief review of the book on the form, and if they share their review on social media and tag Papataka Book Club, they will receive an extra 10 bonus points!</p>
+
+                <p class="mt-6">At the end of the year, the participant with the highest number of points will be declared the winner of the A to Z reading challenge 2023. If you have already read a book, you can still submit it for the challenge as long as it was read in 2023. Good luck and happy reading!</p>
+                
+                <div class="mt-6 text-center">
+                    <a href="https://forms.gle/914RmFsjnP57x4LW8" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Submit a Book</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Section -->
+        <div class="bg-white rounded-xl shadow-xl p-6 sm:p-10 mb-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900">Leaderboard</h2>
+            <p class="text-center text-sm text-gray-500 mt-2 mb-6">Last updated on: 22/09/2023</p>
+            
+            <div class="overflow-x-auto rounded-lg border border-gray-200">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Position</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Reader</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Books Read</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Points</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Naseera Fathima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">8</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2916</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Bharat C.Reddy</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">4</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1261</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Madhavi Gopinath</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1148</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">4</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Deepanwita Maitra</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">5</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1025</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Soumith</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">4</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">717</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Gajoju Akshay Kapil</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">256</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">7</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Gayathri Appanabhotla</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">1</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">240</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Book List Section -->
+        <div class="bg-white rounded-xl shadow-xl p-6 sm:p-10">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-6">Challenge Progress</h2>
+            <div class="overflow-x-auto rounded-lg border border-gray-200">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Alphabet</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Book Title</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Finished by</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Points Scored</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Review</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Table Rows -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">A</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">As good as dead</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Naseera Fathima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">469*</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm"><a href="https://www.instagram.com/p/CraTDapLXc0/" target="_blank" class="book-review-link">Review</a></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Born a crime</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Gajoju Akshay Kapil</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">256*</td>
+                            <td class="px-6 py-4 text-sm review-cell text-gray-700">It's an auto biography of Trevor Noah. It describes about his childhood in South Africa where inter racial discrimination was at a peak and he was born to interracial parents. Thus the title "Born a crime". He speaks up about his struggles, lifestyle, his mom's efforts in the period of apartheid.It's a very good book mixed with emotion and humour.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">C</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Can you keep a secret</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Naseera Fathima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">368</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">D</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Demon Haunted world</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Bharat C.Reddy</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">466*</td>
+                            <td class="px-6 py-4 text-sm review-cell text-gray-700">Carl Sagan illuminates on science, Aliens, Alien abduction theories, superstitions, Mysterious appearance of Gods and Human faces everywhere (moon, fruits, clouds) and Crop cutting patterns, witch hunts of Medieval europe, Hallucinations, How Gurus, Religion leaders, Cults profess practices or continue superstitions under the guise scientific evidence- Pseudoscience. Then goes on to talk about skepticism and importance of questioning. Finally talks about scientific responsibility and education to enable new discoveries and prevent misuse. PS: Also gives a Baloney detection kit with to catch Pseudoscientific arguments and general mystery crap. It might get a bit boring at times, have patience, it totally changes your perception about the world.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">E</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Eleanor Oliphant is Completely Fine</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Madhavi Gopinath</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">400</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">F</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Farewell to Gabo and Mercedes</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Deepanwita Maitra</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">176</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">G</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">The Girl on the train</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Bharat C.Reddy</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">426*</td>
+                            <td class="px-6 py-4 text-sm review-cell text-gray-700">Its was thrilling to say the least. It made me use my imagination to the fullest, it almost felt like a movie with a great screen play. It subtly shows how the world is SO not like how we perceive it. Shedding light on complex human nature, relationship paradoxes, and shallowness in imposition of personal hopes and biases onto other people lives.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">H</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Hercule Poirot’s Christmas</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Naseera Fathima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">251</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">I</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Independence</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Naseera Fathima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">358</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">J</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Jungle Nama</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Deepanwita Maitra</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">88</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">K</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Krishnamurti's Journal</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Soumith</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">120</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">L</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Lajja</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Soumith</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">330*</td>
+                            <td class="px-6 py-4 text-sm review-cell text-gray-700">Lajja by Taslima Nasreen is a thought-provoking novel that highlights the struggles of a minority family living in Bangladesh. The story is set after the Babri Masjid incident in India, which triggers a series of unfortunate events in Bangladesh leading to the persecution of minorities. As I read this book, I found myself questioning the safety of minorities in my own country and how the internal problems of a country can have a significant impact on the citizens of another country. Lajja is a powerful and important book that raises critical questions about communal violence and its impact on minority communities. It is a must-read for anyone interested in South Asian politics, religion, and social issues.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">M</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">My Story</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Soumith</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">219</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">N</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Name Place Animal Thing</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Deepanwita Maitra</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">198</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">O</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Other words for home</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Naseera Fathima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">318*</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm"><a href="https://www.instagram.com/p/CrCrLBHLrVY/" target="_blank" class="book-review-link">Review</a></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">P</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Persepolis</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Deepanwita Maitra</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">353</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Q</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Quiet</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Madhavi Gopinath</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">363</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">R</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">The reason I jump</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Deepanwita Maitra</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">210</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">S</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Socrates meets Jesus</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Bharat C.Reddy</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">165*</td>
+                            <td class="px-6 py-4 text-sm review-cell text-gray-700">It is an apologetic. It tries to confront Christian theology with a rational mind in the form of Socrates. Discussions on specific topics are quite intriguing. As all works on religious thought, it won't give definitive answers, but gives a lot more clarity on beliefs that are generally taken for granted or personal interpretations of mythology and justifications thus made based on utilitarian significance of those myths.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">T</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">The Thursday murder club</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Naseera Fathima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">392*</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm"><a href="https://www.instagram.com/p/CocVnGvrH0J/?utm_source=ig_web_copy_link" target="_blank" class="book-review-link">Review</a></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">U</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Undercover Jihadi Bride</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Gayathri Appanabhotla</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">240</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">V</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Vera Wong’s unsolicited advice for murderers</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Naseera Fathima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">334</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">W</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Wrong time, wrong place</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Naseera Fathima</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">426*</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm"><a href="https://www.instagram.com/p/CqXHT2grqcC/" target="_blank" class="book-review-link">Review</a></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">X</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Xingu</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Soumith</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">48</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Y</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Yellowface</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Madhavi Gopinath</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">385</td>
+                            <td class="px-6 py-4 text-sm text-gray-700"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Z</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Zero to one</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Bharat C.Reddy</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">204*</td>
+                            <td class="px-6 py-4 text-sm review-cell text-gray-700">It is an interesting read offering great insights into startup world. It particularly demystifies all the gaga over entrepreneurship. It challenges many conventional ideas about monopolies, markets, capital, sales and founders, and offers new perspectives. Definitely not a one time read.</td>
+                        </tr>
+                        
+                        <!-- Bonus points explanation row -->
+                        <tr class="bg-white">
+                            <td colspan="5" class="px-6 py-4 text-sm text-right italic text-gray-500">
+                                * +10 for sharing review or tagging papataka book club on social media
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
